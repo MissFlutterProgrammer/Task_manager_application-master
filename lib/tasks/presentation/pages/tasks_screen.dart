@@ -47,7 +47,7 @@ class _TasksScreenState extends State<TasksScreen> {
             actionWidgets: [
               PopupMenuButton<int>(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 elevation: 1,
                 onSelected: (value) {

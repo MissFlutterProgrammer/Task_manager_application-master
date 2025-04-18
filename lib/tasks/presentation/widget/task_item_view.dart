@@ -52,14 +52,15 @@ class _TaskItemViewState extends State<TaskItemView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                        child: buildText(
-                      widget.taskModel.title,
-                      kBlackColor,
-                      textMedium,
-                      FontWeight.w500,
-                      TextAlign.start,
-                      TextOverflow.clip,
-                    )),
+                      child: buildText(
+                        widget.taskModel.title,
+                        kBlackColor,
+                        textMedium,
+                        FontWeight.w500,
+                        TextAlign.start,
+                        TextOverflow.clip,
+                      ),
+                    ),
                     PopupMenuButton<int>(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -81,7 +82,8 @@ class _TaskItemViewState extends State<TaskItemView> {
                             {
                               context.read<TasksBloc>().add(
                                     DeleteTaskEvent(
-                                        taskModel: widget.taskModel),
+                                      taskModel: widget.taskModel,
+                                    ),
                                   );
                               break;
                             }
@@ -93,8 +95,10 @@ class _TaskItemViewState extends State<TaskItemView> {
                             value: 0,
                             child: Row(
                               children: [
-                                SvgPicture.asset('assets/svgs/edit.svg',
-                                    width: 20),
+                                SvgPicture.asset(
+                                  'assets/svgs/edit.svg',
+                                  width: 20,
+                                ),
                                 const SizedBox(width: 10),
                                 buildText(
                                   'Edit task',

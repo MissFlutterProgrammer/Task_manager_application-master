@@ -82,17 +82,23 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
       final tasks = await taskRepository.deleteTask(event.taskModel);
       return emit(FetchTasksSuccess(tasks: tasks));
     } catch (exception) {
-      emit(LoadTaskFailure(error: exception.toString()));
+      emit(
+        LoadTaskFailure(error: exception.toString()),
+      );
     }
   }
 
   _sortTasks(SortTaskEvent event, Emitter<TasksState> emit) async {
     final tasks = await taskRepository.sortTasks(event.sortOption);
-    return emit(FetchTasksSuccess(tasks: tasks));
+    return emit(
+      FetchTasksSuccess(tasks: tasks),
+    );
   }
 
   _searchTasks(SearchTaskEvent event, Emitter<TasksState> emit) async {
     final tasks = await taskRepository.searchTasks(event.keywords);
-    return emit(FetchTasksSuccess(tasks: tasks, isSearching: true));
+    return emit(
+      FetchTasksSuccess(tasks: tasks, isSearching: true),
+    );
   }
 }

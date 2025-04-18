@@ -65,7 +65,10 @@ class BuildTextField extends StatelessWidget {
         ),
         focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(width: 1, color: kPrimaryColor),
+          borderSide: BorderSide(
+            width: 1,
+            color: kPrimaryColor,
+          ),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: const BorderRadius.all(Radius.circular(5)),
@@ -73,19 +76,31 @@ class BuildTextField extends StatelessWidget {
         ),
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(width: 0, color: kGrey1),
+          borderSide: BorderSide(
+            width: 0,
+            color: kGrey1,
+          ),
         ),
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(width: 0, color: kGrey1),
+          borderSide: BorderSide(
+            width: 0,
+            color: kGrey1,
+          ),
         ),
         errorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(width: 1, color: kRed),
+          borderSide: BorderSide(
+            width: 1,
+            color: kRed,
+          ),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
-          borderSide: BorderSide(width: 1, color: kGrey1),
+          borderSide: BorderSide(
+            width: 1,
+            color: kGrey1,
+          ),
         ),
         focusColor: kWhiteColor,
         hoverColor: kWhiteColor,

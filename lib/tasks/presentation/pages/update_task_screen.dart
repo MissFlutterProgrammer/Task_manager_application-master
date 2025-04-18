@@ -142,9 +142,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                     TextAlign.start,
                     TextOverflow.clip,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 10),
                   BuildTextField(
                     hint: "Task Title",
                     controller: title,
@@ -161,9 +159,7 @@ class _UpdateTaskScreenState extends State<UpdateTaskScreen> {
                     TextAlign.start,
                     TextOverflow.clip,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 10),
                   BuildTextField(
                     hint: "Task Description",
                     controller: description,
