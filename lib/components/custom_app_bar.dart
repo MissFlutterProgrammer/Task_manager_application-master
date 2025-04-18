@@ -11,12 +11,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? backgroundColor;
   final List<Widget>? actionWidgets;
 
-  const CustomAppBar({super.key,
+  const CustomAppBar({
+    super.key,
     required this.title,
     this.onBackTap,
     this.showBackArrow = true,
     this.backgroundColor = kWhiteColor,
-    this.actionWidgets
+    this.actionWidgets,
   });
 
   @override
@@ -25,21 +26,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: backgroundColor,
       automaticallyImplyLeading: false,
       elevation: 0,
-      leading: showBackArrow ? IconButton(
-        icon: SvgPicture.asset('assets/svgs/back_arrow.svg'),
-        onPressed: () {
-          if (onBackTap != null) {
-            onBackTap!();
-          } else {
-            Navigator.of(context).pop();
-          }
-        },
-      ) : null,
+      leading: showBackArrow
+          ? IconButton(
+              icon: SvgPicture.asset('assets/svgs/back_arrow.svg'),
+              onPressed: () {
+                if (onBackTap != null) {
+                  onBackTap!();
+                } else {
+                  Navigator.of(context).pop();
+                }
+              },
+            )
+          : null,
       actions: actionWidgets,
       title: Row(
         children: [
-          buildText(title, kBlackColor, textMedium, FontWeight.w500,
-              TextAlign.start, TextOverflow.clip),
+          buildText(
+            title,
+            kBlackColor,
+            textMedium,
+            FontWeight.w500,
+            TextAlign.start,
+            TextOverflow.clip,
+          ),
         ],
       ),
     );

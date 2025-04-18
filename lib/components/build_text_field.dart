@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../utils/color_palette.dart';
 import '../utils/font_sizes.dart';
 
@@ -16,19 +15,20 @@ class BuildTextField extends StatelessWidget {
   final int? maxLength;
   final Function onChange;
 
-  const BuildTextField(
-      {super.key,
-        required this.hint,
-        this.controller,
-        required this.inputType,
-        this.prefixIcon,
-        this.suffixIcon,
-        this.obscureText = false,
-        this.enabled = true,
-        this.fillColor = kWhiteColor,
-        this.hintColor = kGrey1,
-        this.maxLength,
-        required this.onChange});
+  const BuildTextField({
+    super.key,
+    required this.hint,
+    this.controller,
+    required this.inputType,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.obscureText = false,
+    this.enabled = true,
+    this.fillColor = kWhiteColor,
+    this.hintColor = kGrey1,
+    this.maxLength,
+    required this.onChange,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class BuildTextField extends StatelessWidget {
         fillColor: fillColor,
         filled: true,
         contentPadding:
-        const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
+            const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         hintText: hint,
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintStyle: TextStyle(
@@ -76,14 +76,17 @@ class BuildTextField extends StatelessWidget {
           borderSide: BorderSide(width: 0, color: kGrey1),
         ),
         border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            borderSide: BorderSide(width: 0, color: kGrey1)),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderSide: BorderSide(width: 0, color: kGrey1),
+        ),
         errorBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            borderSide: BorderSide(width: 1, color: kRed)),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderSide: BorderSide(width: 1, color: kRed),
+        ),
         focusedErrorBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            borderSide: BorderSide(width: 1, color: kGrey1)),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderSide: BorderSide(width: 1, color: kGrey1),
+        ),
         focusColor: kWhiteColor,
         hoverColor: kWhiteColor,
       ),

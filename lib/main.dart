@@ -26,22 +26,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
-        create: (context) =>
-            TaskRepository(taskDataProvider: TaskDataProvider(preferences)),
-        child: BlocProvider(
-            create: (context) => TasksBloc(context.read<TaskRepository>()),
-            child: MaterialApp(
-              title: 'Task Manager',
-              debugShowCheckedModeBanner: false,
-              initialRoute: Pages.initial,
-              onGenerateRoute: onGenerateRoute,
-              theme: ThemeData(
-                fontFamily: 'Sora',
-                visualDensity: VisualDensity.adaptivePlatformDensity,
-                canvasColor: Colors.transparent,
-                colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
-                useMaterial3: true,
-              ),
-            )));
+      create: (context) =>
+          TaskRepository(taskDataProvider: TaskDataProvider(preferences)),
+      child: BlocProvider(
+        create: (context) => TasksBloc(context.read<TaskRepository>()),
+        child: MaterialApp(
+          title: 'Task Manager',
+          debugShowCheckedModeBanner: false,
+          initialRoute: Pages.initial,
+          onGenerateRoute: onGenerateRoute,
+          theme: ThemeData(
+            fontFamily: 'Sora',
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            canvasColor: Colors.transparent,
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: kPrimaryColor,
+            ),
+            useMaterial3: true,
+          ),
+        ),
+      ),
+    );
   }
 }

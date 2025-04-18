@@ -1,7 +1,7 @@
 import 'package:task_manager_app/tasks/data/local/data_sources/tasks_data_provider.dart';
 import 'package:task_manager_app/tasks/data/local/model/task_model.dart';
 
-class TaskRepository{
+class TaskRepository {
   final TaskDataProvider taskDataProvider;
 
   TaskRepository({required this.taskDataProvider});
@@ -29,5 +29,4 @@ class TaskRepository{
   Future<List<TaskModel>> searchTasks(String search) async {
     return await taskDataProvider.searchTasks(search);
   }
-
 }

@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:task_manager_app/tasks/data/local/model/task_model.dart';
 import 'package:task_manager_app/utils/exception_handler.dart';
-
 import '../../../../utils/constants.dart';
 
 class TaskDataProvider {
@@ -29,7 +28,7 @@ class TaskDataProvider {
         });
       }
       return tasks;
-    }catch(e){
+    } catch (e) {
       throw Exception(handleException(e));
     }
   }
@@ -59,7 +58,7 @@ class TaskDataProvider {
         });
         break;
       case 2:
-      //sort by pending tasks
+        //sort by pending tasks
         tasks.sort((a, b) {
           if (a.completed == b.completed) {
             return 0;
@@ -98,8 +97,8 @@ class TaskDataProvider {
           return -1;
         }
       });
-      final List<String> taskJsonList = tasks.map((task) =>
-          json.encode(task.toJson())).toList();
+      final List<String> taskJsonList =
+          tasks.map((task) => json.encode(task.toJson())).toList();
       prefs!.setStringList(Constants.taskKey, taskJsonList);
       return tasks;
     } catch (exception) {
@@ -110,8 +109,8 @@ class TaskDataProvider {
   Future<List<TaskModel>> deleteTask(TaskModel taskModel) async {
     try {
       tasks.remove(taskModel);
-      final List<String> taskJsonList = tasks.map((task) =>
-          json.encode(task.toJson())).toList();
+      final List<String> taskJsonList =
+          tasks.map((task) => json.encode(task.toJson())).toList();
       prefs!.setStringList(Constants.taskKey, taskJsonList);
       return tasks;
     } catch (exception) {
@@ -124,7 +123,8 @@ class TaskDataProvider {
     List<TaskModel> matchedTasked = tasks;
     return matchedTasked.where((task) {
       final titleMatches = task.title.toLowerCase().contains(searchText);
-      final descriptionMatches = task.description.toLowerCase().contains(searchText);
+      final descriptionMatches =
+          task.description.toLowerCase().contains(searchText);
       return titleMatches || descriptionMatches;
     }).toList();
   }
