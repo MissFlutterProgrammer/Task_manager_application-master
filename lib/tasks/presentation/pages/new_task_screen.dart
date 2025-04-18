@@ -145,15 +145,14 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                     TextAlign.start,
                     TextOverflow.clip,
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 10),
                   BuildTextField(
-                      hint: "Task Description",
-                      controller: description,
-                      inputType: TextInputType.multiline,
-                      fillColor: kWhiteColor,
-                      onChange: (value) {}),
+                    hint: "Task Description",
+                    controller: description,
+                    inputType: TextInputType.multiline,
+                    fillColor: kWhiteColor,
+                    onChange: (value) {},
+                  ),
                   const SizedBox(height: 20),
                   Row(
                     children: [

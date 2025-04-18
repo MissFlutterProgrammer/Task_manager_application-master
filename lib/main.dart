@@ -13,9 +13,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = BlocStateOberver();
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  runApp(MyApp(
-    preferences: preferences,
-  ));
+  runApp(
+    MyApp(preferences: preferences),
+  );
 }
 
 class MyApp extends StatelessWidget {
