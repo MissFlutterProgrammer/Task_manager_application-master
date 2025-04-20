@@ -200,9 +200,7 @@ class _TasksScreenState extends State<TasksScreen> {
                                         SearchTaskEvent(keywords: value),
                                       );
                                 }),
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            const SizedBox(height: 20),
                             Expanded(
                               child: ListView.separated(
                                 shrinkWrap: true,
@@ -263,7 +261,10 @@ class _TasksScreenState extends State<TasksScreen> {
                 color: kPrimaryColor,
               ),
               onPressed: () {
-                Navigator.pushNamed(context, Pages.createNewTask);
+                Navigator.pushNamed(
+                  context,
+                  Pages.createNewTask,
+                );
               }),
         ),
       ),
